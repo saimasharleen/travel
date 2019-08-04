@@ -8,7 +8,8 @@
                       <div class="card-body">
                         <h4 class="card-title">Registration form</h4>
                         <p class="card-description">Information Form </p>
-                        <form class="forms-sample">
+                        <form class="forms-sample" method="post">
+                          @csrf
                           <div class="form-group">
                             <label>First Name</label>
                             <input type="text" class="form-control" name="firstname" placeholder="Enter First Name">
@@ -78,6 +79,14 @@
                       </div>
                     </div>
                   </div>
+                  </div>
+
+                  <div>
+                    @if($errors->any())
+                     @foreach($errors->all() as $err)
+                     {{$err}} <br>
+                     @endforeach
+                    @endif
                   </div>
                   
           @endsection
