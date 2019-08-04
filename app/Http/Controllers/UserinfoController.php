@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use DB; 
 use App\Userinfo;
+use App\login;
 use Illuminate\Http\Request;
 
 class UserinfoController extends Controller
@@ -14,7 +16,13 @@ class UserinfoController extends Controller
      */
     public function index()
     {
-        //
+        
+    }
+
+    public function login(Request $request)
+    {
+        return view('login');
+        
     }
 
     /**
@@ -24,7 +32,7 @@ class UserinfoController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -35,8 +43,40 @@ class UserinfoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'firstname'=>'Required',
+            'lastname'=>'Required',
+            'username'=>'Required',
+            'email'=>'Required',
+            'password'=>'Required',
+            'cpassword'=>'Required',
+            'usertype'=>'Required',
+            'cname'=>'Required',
+            'licenseno'=>'Required',
+            'contactno'=>'Required',
+            'city'=>'Required',
+            'address'=>'Required',
+            'postalcode'=>'Required'
+        ]);
+        $user = new userinfo();
+        $user -> firstname     = $request->firstname;
+        $user -> lastname      = $request->lastname;
+        $user -> username      = $request->username;
+        $user -> email         = $request->email;
+        $user -> password      = $request->password;
+        $user -> cpassword     = $request->cpassword;
+        $user -> usertype      = $request->usertype;
+        $user -> cname         = $request->cname;
+        $user -> licenseno     = $request->licenseno;
+        $user -> contactno     = $request->contactno;        
+        $user -> city          = $request->city;      
+        $user -> address       = $request->address;   
+        $user -> postalcode    = $request->postalcode;            
+        $user ->save();
+
+        return redirect()->route('login');
     }
+
 
     /**
      * Display the specified resource.
