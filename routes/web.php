@@ -31,13 +31,10 @@ Route::get('/gallery', function () {
 Route::get('/tours', function () {
     return view('tours');
 });
-Route::get('/signin', function () {
-    return view('login');
-});
+Route::get('/signin','userinfoController@login')->name('login');
 
 Route::get('/superadmin/index', function () {
     return view('superadmin.index');
 });
-Route::get('/superadmin/pages/signup', function () {
-    return view('superadmin.pages.signup');
-});
+Route::get('/superadmin/pages/signup','superadminController@signup')->name('signup');
+Route::post('/superadmin/pages/signup','superadminController@store');
