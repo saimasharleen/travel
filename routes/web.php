@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/','homeController@index')->name('home');
 
 Route::get('/about', function () {
     return view('about');
@@ -31,10 +29,22 @@ Route::get('/gallery', function () {
 Route::get('/tours', function () {
     return view('tours');
 });
-Route::get('/signin','userinfoController@login')->name('login');
 
-Route::get('/superadmin/index', function () {
-    return view('superadmin.index');
-});
+Route::get('/signin', 'loginController@index')->name('login');
+Route::post('/signin', 'loginController@verify');
+
+Route::get('/superadmin/index', 'superadminController@index')->name('superadmin.index');
 Route::get('/superadmin/pages/signup','superadminController@signup')->name('signup');
 Route::post('/superadmin/pages/signup','superadminController@store');
+
+Route::get('/superadmin/pages/mail', 'MailController@home');
+Route::post('/superadmin/pages/mail', 'MailController@sendemail');
+
+Route::get('/superadmin/pages/advertisement', 'uploadfileController@advertisement');
+Route::post('/superadmin/pages/advertisement', 'uploadfileController@store');
+
+Route::get('/superadmin/pages/notice', 'superadminController@noticeindex')->name('notice');
+Route::post('/superadmin/pages/notice', 'superadminController@noticestore');
+
+Route::get('/superadmin/pages/profile', 'superadminController@profile');
+Route::post('/superadmin/pages/profile', 'superadminController@editprofile');
