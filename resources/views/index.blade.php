@@ -15,9 +15,11 @@
                   <br>
                   <span> that are worth seeing</span> </div>
               </li>
-              <li><img src="images/slide1.jpg" alt=""></li>
-              <li><img src="images/slide2.jpg" alt=""></li>
-              <li><img src="images/slide3.jpg" alt=""></li>
+              @foreach ($ads as $ad)
+                {{-- expr --}}
+              
+              <li><img src="images/{{$ad->image}}" alt=""></li>
+              @endforeach
             </ul>
           </div>
         </div>
@@ -32,7 +34,7 @@
       <div class="boxes">
         <div class="grid_4">
           <figure>
-            <div><img src="images/page1_img1.jpg" alt=""></div>
+            <div><img src="images/slide.jpg" alt=""></div>
             <figcaption>
               <h3>Venice</h3>
               Lorem ipsum dolor site geril amet, consectetur cing eliti. Suspendisse nulla leo mew dignissim eu velite a rew qw vehicula lacinia arcufasec ro. Aenean lacinia ucibusy fase tortor ut feugiat. Rabi tur oliti aliquam bibendum olor quis malesuadivamu. <a href="#" class="btn">Details</a> </figcaption>
@@ -119,25 +121,12 @@
         </div>
       </div>
       <div class="grid_4">
-        <div class="newsletter_title">NewsLetter </div>
+        <div class="newsletter_title">Notices </div>
         <div class="n_container">
-          <form id="newsletter" action="#">
-            <div class="success">Your subscribe request has been sent!</div>
-            <div class="text1">Sign up to receive our newsletters </div>
-            <label class="email">
-              <input type="email" value="email address" >
-              <span class="error">*This is not a valid email address.</span> </label>
-            <div class="clear"></div>
-            <a href="#" class="" data-type="submit"></a>
-          </form>
           <ul class="list">
-            <li><a href="#">Fgo psu dr sit amek </a></li>
-            <li><a href="#">Sem psum dr sit ametre </a></li>
-            <li><a href="#">Rame sum dr sit ame </a></li>
-            <li><a href="#">Bem psum dr sit ameteko </a></li>
-            <li><a href="#">Nem dsum dr sit amewas </a></li>
-            <li><a href="#">Vcem psum dr sit </a></li>
-            <li><a href="#">Zdfem psum dr sittr amewe </a></li>
+            @foreach ($notices as $notice)
+            <li>{{$notice->postd}}</li>
+              @endforeach
           </ul>
         </div>
       </div>
