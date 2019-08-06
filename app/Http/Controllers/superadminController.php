@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use DB; 
 use App\Userinfo;
+use App\login;
+use App\notice;
 use Illuminate\Http\Request;
 
 class superadminController extends Controller
@@ -15,13 +17,14 @@ class superadminController extends Controller
      */
     public function index()
     {
-        
+         return view('superadmin.index');
     }
     public function signup()
     {
          return view('superadmin.pages.signup');
     }
-
+    
+    
     /**
      * Show the form for creating a new resource.
      *
@@ -44,7 +47,7 @@ class superadminController extends Controller
             'firstname'=>'Required',
             'lastname'=>'Required',
             'username'=>'Required',
-            'email'=>'Required',
+            /*'email'=>'Required',*/
             'password'=>'Required',
             'cpassword'=>'Required',
             'usertype'=>'Required',
@@ -70,11 +73,31 @@ class superadminController extends Controller
         $user -> address       = $request->address;   
         $user -> postalcode    = $request->postalcode;            
         $user ->save();
+        
+        $userlogin = new login();
+        $userlogin -> email         = $request->email;
+        $userlogin -> password      = $request->password; 
+        $userlogin -> usertype      = $request->usertype;         
+        $userlogin ->save();
 
         return redirect()->route('login');
     }
-
-
+    
+    public function noticeindex()
+    {
+        return view('superadmin.pages.notice');
+    }
+    
+     public function noticestore(Request $request)
+    {
+        $this->validate($request, [
+            'postd'=>'Required'
+        ]);
+        $user = new notice();
+        $user -> postd     = $request->postd;
+        $user ->save();
+        return redirect()->route('notice');
+    }
     /**
      * Display the specified resource.
      *
@@ -84,6 +107,16 @@ class superadminController extends Controller
     public function show(Userinfo $userinfo)
     {
         //
+    }
+
+    public function profile()
+    {
+        return view('superadmin.pages.profile');
+    }
+
+     public function editprofile()
+    {
+        
     }
 
     /**
