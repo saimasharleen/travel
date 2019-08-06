@@ -180,47 +180,27 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                <i class="menu-icon typcn typcn-coffee"></i>
-                <span class="menu-title">Basic UI Elements</span>
-                <i class="menu-arrow"></i>
-              </a>
-              <div class="collapse" id="ui-basic">
-                <ul class="nav flex-column sub-menu">
-                  <li class="nav-item">
-                    <a class="nav-link" href="/superadmin/pages/ui-features/buttons.html">Buttons</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/superadmin/pages/ui-features/dropdowns.html">Dropdowns</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/superadmin/pages/ui-features/typography.html">Typography</a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/superadmin/pages/forms/basic_elements.html">
+              <a class="nav-link" href="/superadmin/pages/profile">
                 <i class="menu-icon typcn typcn-shopping-bag"></i>
-                <span class="menu-title">Form elements</span>
+                <span class="menu-title">Profile</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/superadmin/pages/charts/chartjs.html">
+              <a class="nav-link" href="/superadmin/pages/advertisement">
                 <i class="menu-icon typcn typcn-th-large-outline"></i>
-                <span class="menu-title">Charts</span>
+                <span class="menu-title">Advertisement Post</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/superadmin/pages/tables/basic-table.html">
+              <a class="nav-link" href="/superadmin/pages/notice">
                 <i class="menu-icon typcn typcn-bell"></i>
-                <span class="menu-title">Tables</span>
+                <span class="menu-title">Post Notice</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/superadmin/pages/icons/font-awesome.html">
+              <a class="nav-link" href="/superadmin/pages/mail">
                 <i class="menu-icon typcn typcn-user-outline"></i>
-                <span class="menu-title">Icons</span>
+                <span class="menu-title">Send Email</span>
               </a>
             </li>
             <li class="nav-item">
