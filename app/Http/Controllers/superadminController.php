@@ -108,15 +108,64 @@ class superadminController extends Controller
     {
         //
     }
+    
+     public function uploadstore(Request $request)
+    {
+        $this->validate($request, [
+        'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+    if ($request->hasFile('image')) {
+        $image = $request->file('image');
+        $name = time().'.'.$image->getClientOriginalExtension();
+        $destinationPath = public_path('/images');
+        $image->move($destinationPath, $name);
+        //$this->save();
+
+        $adv  = new userinfo([
+            'image' => $name
+        ]);
+        $adv->save();
+
+         return back();
+        
+    }
+}
 
     public function profile()
     {
         return view('superadmin.pages.profile');
     }
-
      public function editprofile()
     {
-        
+        return view('superadmin.pages.editprofile');
+    }
+
+     public function editprofilestore(Request $request)
+    {
+         $this->validate($request, [
+            'firstname'=>'Required',
+            'lastname'=>'Required',
+            'username'=>'Required',
+            'contactno'=>'Required',
+            'city'=>'Required',
+            'address'=>'Required',
+            'postalcode'=>'Required',
+        ]);
+        $user = new userinfo();
+         $user -> firstname    = $request->firstname;
+         $user -> lastname    = $request->lastname;
+         $user -> username    = $request->username;
+         $user -> contactno    = $request->contactno;
+         $user -> contactno    = $request->contactno;
+         $user -> city   = $request->city;
+         $user -> address  = $request->address;
+         $user ->save();
+        return redirect()->route('superadmin/pages/profile');
+    }
+     public function forgetpassword()
+    {
+        return view('superadmin.pages.changepassword');
     }
 
     /**
