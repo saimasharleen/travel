@@ -24,6 +24,8 @@ class MailController extends Controller
     	$subject = $get->subject;
     	$message = $get->message;
           // dd([$message,$subject]);
+
+        //echo $message;
     	Mail::to($email)->send(new SendEmail($subject, $message));
     	Session::flash("Success");
     	return back();
