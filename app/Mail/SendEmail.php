@@ -23,6 +23,7 @@ class SendEmail extends Mailable
     {
         $this->sub = $subject;
         $this->mes = $message;
+
     }
 
     /**
@@ -36,7 +37,7 @@ class SendEmail extends Mailable
         $e_message = $this->mes;
      //dd([$e_subject,$e_message]);
         return $this->view('superadmin.pages.mail')->subject($e_subject);
-         // return $this->mes;
+         return $this->mes;
 
     }
 }
