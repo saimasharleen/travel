@@ -32,7 +32,6 @@
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-center">
           <ul class="navbar-nav">
-            <li class="nav-item font-weight-semibold d-none d-lg-block">Help : +050 2992 709</li>
             <li class="nav-item dropdown language-dropdown">
               <a class="nav-link dropdown-toggle px-2 d-flex align-items-center" id="LanguageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
                 <div class="d-inline-flex mr-0 mr-md-3">
@@ -126,10 +125,6 @@
                   <div class="preview-thumbnail">
                     <i class="mdi mdi-airballoon m-auto text-primary"></i>
                   </div>
-                  <div class="preview-item-content">
-                    <h6 class="preview-subject font-weight-normal text-dark mb-1">New user registration</h6>
-                    <p class="font-weight-light small-text mb-0"> 2 days ago </p>
-                  </div>
                 </a>
               </div>
             </li>
@@ -142,10 +137,7 @@
                   <p class="mb-1 mt-3 font-weight-semibold">Allen Moreno</p>
                   <p class="font-weight-light text-muted mb-0">allenmoreno@gmail.com</p>
                 </div>
-                <a class="dropdown-item">My Profile <span class="badge badge-pill badge-danger">1</span><i class="dropdown-item-icon ti-dashboard"></i></a>
-                <a class="dropdown-item">Messages<i class="dropdown-item-icon ti-comment-alt"></i></a>
-                <a class="dropdown-item">Activity<i class="dropdown-item-icon ti-location-arrow"></i></a>
-                <a class="dropdown-item">FAQ<i class="dropdown-item-icon ti-help-alt"></i></a>
+                <a class="dropdown-item" href="/superadmin/pages/profile">My Profile <span class="badge badge-pill badge-danger"></span><i class="dropdown-item-icon ti-dashboard"></i></a>
                 <a class="dropdown-item">Sign Out<i class="dropdown-item-icon ti-power-off"></i></a>
               </div>
             </li>
@@ -174,21 +166,21 @@
             </li>
             <li class="nav-item nav-category">Main Menu</li>
             <li class="nav-item">
-              <a class="nav-link" href="/superadmin/index">
-                <i class="menu-icon typcn typcn-document-text"></i>
-                <span class="menu-title">Dashboard</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/superadmin/pages/profile">
+              <a class="nav-link" href="/superadmin/pages/">
                 <i class="menu-icon typcn typcn-shopping-bag"></i>
-                <span class="menu-title">Profile</span>
+                <span class="menu-title">Dashboard</span>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/superadmin/pages/advertisement">
                 <i class="menu-icon typcn typcn-th-large-outline"></i>
                 <span class="menu-title">Advertisement Post</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/superadmin/pages/">
+                <i class="menu-icon typcn typcn-th-large-outline"></i>
+                <span class="menu-title">Deposit Amount</span>
               </a>
             </li>
             <li class="nav-item">
