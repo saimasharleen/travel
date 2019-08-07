@@ -71,7 +71,8 @@ class superadminController extends Controller
         $user -> contactno     = $request->contactno;        
         $user -> city          = $request->city;      
         $user -> address       = $request->address;   
-        $user -> postalcode    = $request->postalcode;            
+        $user -> postalcode    = $request->postalcode;  
+        $user -> deposit    = $request->deposit; 
         $user ->save();
         
         $userlogin = new login();
@@ -133,13 +134,11 @@ class superadminController extends Controller
 }
 
     public function profile()
-    {
-        return view('superadmin.pages.profile');
+    {   
+        //dd(session('email'));
+       return view('superadmin.pages.profile');
     }
-     public function editprofile()
-    {
-        return view('superadmin.pages.editprofile');
-    }
+    
 
      public function editprofilestore(Request $request)
     {
