@@ -47,4 +47,8 @@ Route::get('/superadmin/pages/notice', 'superadminController@noticeindex')->name
 Route::post('/superadmin/pages/notice', 'superadminController@noticestore');
 
 Route::get('/superadmin/pages/profile', 'superadminController@profile');
-Route::post('/superadmin/pages/profile', 'superadminController@editprofile');
+
+Route::get('/superadmin/pages/profile', 'superadminController@profile');
+Route::post('/superadmin/pages/profile', 'superadminController@uploadstore');
+Route::post('/superadmin/pages/editprofile', 'superadminController@editprofilestore');
+Route::get('/superadmin/pages/forgetpassword', 'superadminController@forgetpassword');
