@@ -73,6 +73,10 @@
                             <label>Postal Code</label>
                             <input type="text" class="form-control" name="postalcode" placeholder="postalcode">
                           </div>
+                          <div class="form-group">
+                            <label>Deposit Amount</label>
+                            <input type="text" class="form-control" name="deposit" placeholder="deposit">
+                          </div>
                           <button type="submit" class="btn btn-success mr-2">Submit</button>
                           <button class="btn btn-light">Cancel</button>
                         </form>
