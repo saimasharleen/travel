@@ -23,7 +23,7 @@ class loginController extends Controller
 
 		if($user != null){
             if($user->usertype == "superadmin"){
-                $request->session()->put('logged', $user);
+                $request->session()->put('email', $email);
     			return redirect()->route('superadmin.index');
             }
 		}else{
