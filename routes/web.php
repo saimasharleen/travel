@@ -15,18 +15,10 @@ Route::get('/','homeController@index')->name('home');
 
 Route::get('/about','homeController@about')->name('about');
 
-Route::get('/blog', function () {
-    return view('blog');
-});
-Route::get('/contacts', function () {
-    return view('contacts');
-});
-Route::get('/gallery', function () {
-    return view('gallery');
-});
-Route::get('/tours', function () {
-    return view('tours');
-});
+Route::get('/blog', 'homeController@blog')->name('blog');
+Route::get('/contacts', 'homeController@contacts')->name('contacts');
+Route::get('/gallery','homeController@gallery')->name('gallery');
+Route::get('/tours', 'homeController@tours')->name('tours');
 
 Route::get('/signin', 'loginController@index')->name('login');
 Route::post('/signin', 'loginController@verify');
