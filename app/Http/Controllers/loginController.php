@@ -26,7 +26,13 @@ class loginController extends Controller
                 $request->session()->put('email', $email);
     			return redirect()->route('superadmin.index');
             }
-		}else{
+		}elseif($user != null){
+            if($user->usertype == "hotelagent"){
+                $request->session()->put('email', $email);
+                return redirect()->route('hotelagent.index');
+            }
+        }
+        else{
 			
 			$request->session()->flash('message', 'Invalid email or password');
 			return redirect()->route('login', ['email'=>$email]);
