@@ -19,4 +19,20 @@ class homeController extends Controller
     {  
         return view('about');
     }
+     public function blog()
+    {  
+        return view('blog');
+    }
+    public function contacts()
+    {  
+        return view('contacts');
+    }
+    public function tours()
+    {  
+        return view('tours');
+    }
+    public function gallery()
+    {  
+        return view('gallery');
+    }
 }
