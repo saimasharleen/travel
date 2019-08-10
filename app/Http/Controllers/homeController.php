@@ -12,6 +12,11 @@ class homeController extends Controller
     {  
     	$ads = advertise::all();
     	$notices = notice::all();
-         return view('index', compact(['ads','notices']));
+        return view('index', compact(['ads','notices']));
+    }
+     
+     public function about()
+    {  
+        return view('about');
     }
 }
