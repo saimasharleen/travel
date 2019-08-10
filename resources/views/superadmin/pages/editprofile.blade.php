@@ -26,7 +26,7 @@
         <div class="col-sm-9">
             <ul class="nav nav-tabs">
                 <li class="active"><a data-toggle="tab" href="#profile">Profile</a></li>
-                <li><a data-toggle="tab" href="#edit-profile">Edit Profile</a></li>
+                <li><a data-toggle="tab" href="">Edit Profile</a></li>
                 <li><a data-toggle="tab" href="#change-password">Change Password</a></li>
             </ul>
 
