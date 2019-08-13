@@ -37,3 +37,7 @@ Route::get('/superadmin/pages/notice', 'superadminController@noticeindex')->name
 Route::post('/superadmin/pages/notice', 'superadminController@noticestore');
 
 Route::get('/superadmin/pages/profile', 'superadminController@profile');
+
+Route::get('/b2b/index', 'b2bController@index')->name('b2b.index');
+
+Route::get('/hotelagent/index', 'hotelagentController@index')->name('hotelagent.index');
