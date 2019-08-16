@@ -50,54 +50,8 @@
               </div>
             </li>
           </ul>
-          <form class="ml-auto search-form d-none d-md-block" action="#">
-            <div class="form-group">
-              <input type="search" class="form-control" placeholder="Search Here">
-            </div>
-          </form>
           <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown">
-              <a class="nav-link count-indicator" id="messageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-                <i class="mdi mdi-bell-outline"></i>
-                <span class="count">7</span>
-              </a>
-              <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="messageDropdown">
-                <a class="dropdown-item py-3">
-                  <p class="mb-0 font-weight-medium float-left">You have 7 unread mails </p>
-                  <span class="badge badge-pill badge-primary float-right">View all</span>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <img src="{{asset('superadmin')}}/images/faces/face10.jpg" alt="image" class="img-sm profile-pic"> </div>
-                  <div class="preview-item-content flex-grow py-2">
-                    <p class="preview-subject ellipsis font-weight-medium text-dark">Marian Garner </p>
-                    <p class="font-weight-light small-text"> The meeting is cancelled </p>
-                  </div>
-                </a>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <img src="{{asset('superadmin')}}/images/faces/face12.jpg" alt="image" class="img-sm profile-pic"></div>
-                  <div class="preview-item-content flex-grow py-2">
-                    <p class="preview-subject ellipsis font-weight-medium text-dark">David Grey </p>
-                    <p class="font-weight-light small-text"> The meeting is cancelled </p>
-                  </div>
-                </a>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <img src="{{asset('superadmin')}}/images/faces/face1.jpg" alt="image" class="img-sm profile-pic"> </div>
-                  <div class="preview-item-content flex-grow py-2">
-                    <p class="preview-subject ellipsis font-weight-medium text-dark">Travis Jenkins </p>
-                    <p class="font-weight-light small-text"> The meeting is cancelled </p>
-                  </div>
-                </a>
-              </div>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link count-indicator" id="notificationDropdown" href="#" data-toggle="dropdown">
-                <i class="mdi mdi-email-outline"></i>
-                <span class="count bg-success">3</span>
-              </a>
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="notificationDropdown">
                 <a class="dropdown-item py-3 border-bottom">
                   <p class="mb-0 font-weight-medium float-left">You have 4 new notifications </p>
@@ -158,12 +112,12 @@
             <li class="nav-item nav-profile">
               <a href="#" class="nav-link">
                 <div class="profile-image">
-                  <img class="img-xs rounded-circle" src="superadmin/images/faces/face8.jpg" alt="profile image">
+                  <img class="img-xs rounded-circle"  alt="profile image">
                   <div class="dot-indicator bg-success"></div>
                 </div>
                 <div class="text-wrapper">
-                  <p class="profile-name">Allen Moreno</p>
-                  <p class="designation">Premium user</p>
+                  <p class="profile-name"></p>
+                  <p class="designation">Superadmin</p>
                 </div>
               </a>
             </li>
@@ -193,13 +147,13 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/superadmin/pages/">
+              <a class="nav-link" href="/superadmin/pages/hotelagentlist">
                 <i class="menu-icon typcn typcn-th-large-outline"></i>
                 <span class="menu-title">Hotel Agent List</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/superadmin/pages/">
+              <a class="nav-link" href="/superadmin/pages/flightagentlist">
                 <i class="menu-icon typcn typcn-th-large-outline"></i>
                 <span class="menu-title">Flight Agent List</span>
               </a>
