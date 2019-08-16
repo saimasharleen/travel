@@ -15,18 +15,16 @@
     </div>
     <div class="row">
         <div class="col-sm-3"><!--left col-->
-
-        	<form method="post" enctype="multipart/form-data">
+            <form method="post" enctype="multipart/form-data">
                 @csrf
-	            <div class="text-center">
-	                <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
-	                <h6>Upload a different photo...</h6>
-	                <input type="file" class="text-center center-block file-upload" name="image">
-	               
-
-	            </div></hr><br>
-
-               </div><!--/col-3-->
+                <div class="text-center">
+                    <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
+                    <h6>Upload a different photo...</h6>
+                    <input type="file" class="text-center center-block file-upload" name="image">
+                </div>
+                </hr>
+                <br>
+                </div><!--/col-3-->
         <div class="col-sm-9">
             <ul class="nav nav-tabs">
                 <li class="active"><a data-toggle="tab" href="#profile">Profile</a></li>
@@ -37,7 +35,7 @@
 
             <div class="tab-content">
                 <div class="tab-pane active" id="profile">
-                    <hr>
+                        <hr>
                         <div class="form-group">
 
                             <div class="col-xs-6">
@@ -218,12 +216,11 @@
                                 <!--<button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>-->
                             </div>
                         </div>
-                    </form>
-
+                    
             </div><!--/tab-pane-->
         </div><!--/tab-content-->
-
     </div><!--/col-9-->
+    </form>
 </div><!--/row-->
 </div>
 @endsection
