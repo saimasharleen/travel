@@ -1,7 +1,8 @@
 @extends('layouts.superadmin')
 @section('content')
-
+        
         <div class="main-panel">
+          <h3 style="color:Tomato;"> {{ Session::get('message')}} </h3> 
           <div class="content-wrapper">
                     <div class="col-12">
                     <div class="card">
