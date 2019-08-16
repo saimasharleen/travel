@@ -47,10 +47,41 @@ class superadminController extends Controller
     }
     
     public function b2bagentlist()
-    {   $user = Userinfo::where('usertype', 'b2bagent')->get();
+    {  
+         if(session('email') == null){
+           return redirect()->route('login');
+        }
+    else{
+
+        $user = Userinfo::where('usertype', 'b2bagent')->get();
         //dd($user);
        return view('superadmin.pages.b2bagentlist',compact('user'));
-         
+        }
+    }
+    public function hotelagentlist()
+    {  
+         if(session('email') == null){
+           return redirect()->route('login');
+        }
+    else{
+
+        $user = Userinfo::where('usertype', 'hotelagent')->get();
+        //dd($user);
+       return view('superadmin.pages.hotelagentlist',compact('user'));
+        }
+    }
+
+    public function flightagentlist()
+    {  
+         if(session('email') == null){
+           return redirect()->route('login');
+        }
+    else{
+
+        $user = Userinfo::where('usertype', 'flightagent')->get();
+        //dd($user);
+       return view('superadmin.pages.flightagentlist',compact('user'));
+        }
     }
     /**
      * Show the form for creating a new resource.
@@ -170,11 +201,16 @@ class superadminController extends Controller
 
     public function profile()
     {   
+         if(session('email') == null){
+           return redirect()->route('login');
+        }
+    else{
         //dd(session('email')); 
         $user = Userinfo::where('email',session('email'))->first();
         $userlogin = login::where('email',session('email'))->first();
         //dd($user);
        return view('superadmin.pages.profile',compact(['user','userlogin']));
+        }
     }
     public function updateProfile(Request $request)
     {
