@@ -36,12 +36,25 @@ class superadminController extends Controller
     }
     public function signup()
     {
+        if(session('email') == null){
+           return redirect()->route('login');
+        }
+    else{
+
          return view('superadmin.pages.signup');
+        }
+         
     }
     
     public function b2bagentlist()
-    {
+    {   if(session('email') == null){
+           return redirect()->route('login');
+        }
+    else{
+
          return view('superadmin.pages.b2bagentlist');
+        }
+         
     }
     /**
      * Show the form for creating a new resource.
@@ -103,8 +116,14 @@ class superadminController extends Controller
     }
     
     public function noticeindex()
-    {
+    {   if(session('email') == null){
+           return redirect()->route('login');
+        }
+    else{
+
         return view('superadmin.pages.notice');
+        }
+        
     }
     
      public function noticestore(Request $request)
@@ -178,15 +197,17 @@ class superadminController extends Controller
             'img' => $name
         ]);*/
 /*        $adv::where('email',session('email'))->update();
-*/
-DB::table('user')
+*/    
+
+        DB::table('user')
             ->where('email', session('email'))
             ->update(['img' => $name]);
 
          return back();
         
-    }
 
+    }
+    
     }
 
      public function editprofilestore(Request $request)
@@ -196,24 +217,27 @@ DB::table('user')
             'lastname'=>'Required',
             'username'=>'Required',
             'contactno'=>'Required',
+            'cname'=>'Required',
             'city'=>'Required',
             'address'=>'Required',
             'postalcode'=>'Required',
         ]);
-        $user = new userinfo();
-         $user -> firstname    = $request->firstname;
-         $user -> lastname    = $request->lastname;
-         $user -> username    = $request->username;
-         $user -> contactno    = $request->contactno;
-         $user -> contactno    = $request->contactno;
-         $user -> city   = $request->city;
-         $user -> address  = $request->address;
-         $user ->save();
-        return redirect()->route('superadmin/pages/profile');
+
+        $user = Userinfo::where('email',session('email'))->first();
+        $user->firstname = $request->get('firstname');
+        $user->lastname = $request->get('lastname');
+        $user->username = $request->get('username');
+        $user->cname = $request->get('cname');
+        $user->contactno = $request->get('contactno');
+        $user->city = $request->get('city');
+        $user->address = $request->get('address');
+        $user->postalcode = $request->get('postalcode');
+        $user->update();
+
     }
      public function forgetpassword()
     {
-        return view('superadmin.pages.changepassword');
+        
     }
 
     /**
