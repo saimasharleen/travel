@@ -30,7 +30,7 @@
         <div class="col-sm-9">
             <ul class="nav nav-tabs">
                 <li class="active"><a data-toggle="tab" href="#profile">Profile</a></li>
-                <li><a data-toggle="tab" href="#edit-profile">Edit Profile</a></li>
+                <li class="active"><a data-toggle="tab" href="#edit-profile">Edit Profile</a></li>
                 <li><a data-toggle="tab" href="#change-password">Change Password</a></li>
             </ul>
 
@@ -111,6 +111,14 @@
                                 <label>{{$user->address}}</label>
                             </div>
                         </div>
+                        <div class="form-group">
+
+                            <div class="col-xs-6">
+                                <label for="postalcode"><h4>Postalcode</h4></label>
+                                <br>
+                                <label>{{$user->postalcode}}</label>
+                            </div>
+                        </div>
 
                 </div><!--/tab-pane-->
                 <div class="tab-pane" id="edit-profile">
@@ -125,73 +133,76 @@
                                 <input type="text" class="form-control" name="first_name" id="first_name" placeholder="first name" value="{{$user->firstname}}" >
                             </div>
                         </div>
+                        
                         <div class="form-group">
 
                             <div class="col-xs-6">
                                 <label for="last_name"><h4>Last name</h4></label>
-                                <input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" title="enter your last name if any.">
+                                <input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" value="{{$user->lastname}}" >
                             </div>
                         </div>
-
+                        
                         <div class="form-group">
 
                             <div class="col-xs-6">
-                                <label for="email"><h4>Email</h4></label>
-                                <input type="email" class="form-control" name="email" id="email" placeholder="you@email.com" title="enter your email.">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-
-                            <div class="col-xs-6">
-                                <label for="phone"><h4>Phone</h4></label>
-                                <input type="text" class="form-control" name="phone" id="phone" placeholder="enter phone" title="enter your phone number if any.">
+                                <label for="username"><h4>Username</h4></label>
+                                <input type="text" class="form-control" name="username" id="username" placeholder="username" value="{{$user->username}}" >
                             </div>
                         </div>
                         <div class="form-group">
 
                             <div class="col-xs-6">
-                                <label for="gender"><h4>Gender</h4></label>
-                                <br>
-                                <select style="width:100%; padding: 5px" name="gender" title="select your gender.">
-                                    <option value="">Select Gender</option>
-                                    <option value="Male">Male</option>
-                                    <option value="Female">Female</option>
-                                </select>
-
+                                
+                                <label for="cname"><h4>Company Name</h4></label>
+                                <input type="text" class="form-control" name="cname" id="cname" placeholder="company name" value="{{$user->cname}}" >
                             </div>
                         </div>
+                        
 
                         <div class="form-group">
 
                             <div class="col-xs-6">
+                                
+                                <label for="contactno"><h4>Phone Number</h4></label>
+                                <input type="text" class="form-control" name="contactno" id="contactno" placeholder="contactno" value="{{$user->contactno}}" >
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+
+                            <div class="col-xs-6">
+                                
+                                <label for="city"><h4>City</h4></label>
+                                <input type="text" class="form-control" name="city" id="city" placeholder="city" value="{{$user->city}}" >
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+
+                            <div class="col-xs-6">
+                                
                                 <label for="address"><h4>Address</h4></label>
-                                <input type="text" class="form-control" id="address" placeholder="Address" title="enter an address">
+                                <input type="text" class="form-control" name="address" id="address" placeholder="address" value="{{$user->address}}" >
                             </div>
                         </div>
-
+                        
                         <div class="form-group">
-                            <div class="col-xs-12">
-                                <br>
-                                {{-- <button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button> --}}
+
+                            <div class="col-xs-6">
+                                
+                                <label for="postalcode"><h4>Postalcode</h4></label>
+                                <input type="text" class="form-control" name="postalcode" id="postalcode" placeholder="postalcode" value="{{$user->postalcode}}" >
                             </div>
                         </div>
+                        
                    </div><!--/tab-pane-->
                 <div class="tab-pane" id="change-password">
 
                     <hr>
                              <div class="col-xs-7">
-                                <label for="password"><h4>Password</h4></label>
-                                <input type="password" class="form-control" name="password" id="password" placeholder="password" title="enter your password.">
+                                <label for="password"><h4>New Password</h4></label>
+                                <input type="password" class="form-control" name="password" id="password" placeholder="password" value="{{$userlogin->password}}">
                             </div>
-
-                        <div class="form-group">
-
-                            <div class="col-xs-7">
-                                <label for="new_password"><h4>New Password</h4></label>
-                                <input type="password" class="form-control" name="new_password" id="new_password" placeholder="new password" title="enter your new password.">
-                            </div>
-                        </div>
 
                         <div class="form-group">
 
