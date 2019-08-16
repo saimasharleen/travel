@@ -17,16 +17,16 @@
         <div class="col-sm-3"><!--left col-->
 
         	<form method="post" enctype="multipart/form-data">
+                @csrf
 	            <div class="text-center">
 	                <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
 	                <h6>Upload a different photo...</h6>
-	                <input type="file" class="text-center center-block file-upload">
-	                <button class="btn btn-lg btn-success pull-left" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
+	                <input type="file" class="text-center center-block file-upload" name="image">
+	               
 
 	            </div></hr><br>
 
-            </form>
-        </div><!--/col-3-->
+               </div><!--/col-3-->
         <div class="col-sm-9">
             <ul class="nav nav-tabs">
                 <li class="active"><a data-toggle="tab" href="#profile">Profile</a></li>
@@ -38,13 +38,12 @@
             <div class="tab-content">
                 <div class="tab-pane active" id="profile">
                     <hr>
-                    <form class="form" action="" method="post">
                         <div class="form-group">
 
                             <div class="col-xs-6">
                                 <label for="first_name"><h4>First name</h4></label>
                                 <br>
-                                <label>ABC</label>
+                                <label>{{$user->firstname}}</label>
                             </div>
                         </div>
 
@@ -53,7 +52,15 @@
                             <div class="col-xs-6">
                                 <label for="last_name"><h4>Last name</h4></label>
                                 <br/>
-                                <label>ABC</label>
+                                <label>{{$user->lastname}}</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+
+                            <div class="col-xs-6">
+                                <label for="username"><h4>Username</h4></label>
+                                <br/>
+                                <label>{{$user->username}}</label>
                             </div>
                         </div>
                         <div class="form-group">
@@ -61,25 +68,39 @@
                             <div class="col-xs-6">
                                 <label for="email"><h4>Email</h4></label>
                                 <br/>
-                                <label>ABC</label>
+                                <label>{{$user->email}}</label>
                             </div>
                         </div>
+                        <div class="form-group">
 
+                            <div class="col-xs-6">
+                                <label for="cname"><h4>Company Name</h4></label>
+                                <br>
+                                <label>{{$user->cname}}</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+
+                            <div class="col-xs-6">
+                                <label for="licenseno"><h4>License No</h4></label>
+                                <br>
+                                <label>{{$user->licenseno}}</label>
+                            </div>
+                        </div>
                         <div class="form-group">
 
                             <div class="col-xs-6">
                                 <label for="phone"><h4>Phone</h4></label>
                                 <br>
-                                <label>ABC</label>
+                                <label>{{$user->contactno}}</label>
                             </div>
                         </div>
-
                         <div class="form-group">
 
                             <div class="col-xs-6">
-                                <label for="gender"><h4>Gender</h4></label>
+                                <label for="city"><h4>City</h4></label>
                                 <br>
-                                <label>ABC</label>
+                                <label>{{$user->city}}</label>
                             </div>
                         </div>
                         <div class="form-group">
@@ -87,11 +108,9 @@
                             <div class="col-xs-6">
                                 <label for="address"><h4>Address</h4></label>
                                 <br>
-                                <label>ABC</label>
+                                <label>{{$user->address}}</label>
                             </div>
                         </div>
-
-                    </form>
 
                 </div><!--/tab-pane-->
                 <div class="tab-pane" id="edit-profile">
@@ -99,12 +118,11 @@
                     <h2></h2>
 
                     <hr>
-                    <form class="form" action="#" method="post" id="#">
                         <div class="form-group">
 
                             <div class="col-xs-6">
                                 <label for="first_name"><h4>First name</h4></label>
-                                <input type="text" class="form-control" name="first_name" id="first_name" placeholder="first name" title="enter your first name if any.">
+                                <input type="text" class="form-control" name="first_name" id="first_name" placeholder="first name" value="{{$user->firstname}}" >
                             </div>
                         </div>
                         <div class="form-group">
@@ -155,18 +173,14 @@
                         <div class="form-group">
                             <div class="col-xs-12">
                                 <br>
-                                <button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
+                                {{-- <button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button> --}}
                             </div>
                         </div>
-
-                    </form>
-                </div><!--/tab-pane-->
+                   </div><!--/tab-pane-->
                 <div class="tab-pane" id="change-password">
 
                     <hr>
-                    <form class="form"  method="post" id="#">
-
-                            <div class="col-xs-7">
+                             <div class="col-xs-7">
                                 <label for="password"><h4>Password</h4></label>
                                 <input type="password" class="form-control" name="password" id="password" placeholder="password" title="enter your password.">
                             </div>
