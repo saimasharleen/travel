@@ -15,6 +15,10 @@ class superadminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    
+
+         
     public function index()
     {
          return view('superadmin.index');
@@ -24,7 +28,10 @@ class superadminController extends Controller
          return view('superadmin.pages.signup');
     }
     
-    
+    public function b2bagentlist()
+    {
+         return view('superadmin.pages.b2bagentlist');
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -81,7 +88,7 @@ class superadminController extends Controller
         $userlogin -> usertype      = $request->usertype;         
         $userlogin ->save();
 
-        return redirect()->route('login');
+        return redirect()->route('signup')->with('message','registered successfully');;
     }
     
     public function noticeindex()
@@ -97,7 +104,9 @@ class superadminController extends Controller
         $user = new notice();
         $user -> postd     = $request->postd;
         $user ->save();
-        return redirect()->route('notice');
+
+
+        return redirect()->route('notice')->with('message','notice added successfully');;
     }
     /**
      * Display the specified resource.
@@ -135,10 +144,39 @@ class superadminController extends Controller
 
     public function profile()
     {   
-        //dd(session('email'));
-       return view('superadmin.pages.profile');
+        //dd(session('email')); 
+        $user = Userinfo::where('email',session('email'))->first();
+        $userlogin = login::where('email',session('email'))->first();
+        //dd($user);
+       return view('superadmin.pages.profile',compact(['user','userlogin']));
     }
-    
+    public function updateProfile(Request $request)
+    {
+        $this->validate($request, [
+        'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+    if ($request->hasFile('image')) {
+        $image = $request->file('image');
+        $name = time().'.'.$image->getClientOriginalExtension();
+        $destinationPath = public_path('/images');
+        $image->move($destinationPath, $name);
+        //$this->save();
+
+/*        $adv  = new Userinfo([
+            'img' => $name
+        ]);*/
+/*        $adv::where('email',session('email'))->update();
+*/
+DB::table('user')
+            ->where('email', session('email'))
+            ->update(['img' => $name]);
+
+         return back();
+        
+    }
+
+    }
 
      public function editprofilestore(Request $request)
     {
