@@ -11,3 +11,4 @@ npm-debug.log
 yarn-error.log
 public/css/style.css
 public/css/superfish.css
+public/superadmin/vendors/lightgallery/js/lightgallery.js
