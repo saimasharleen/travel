@@ -10,20 +10,17 @@
                             <th>Lastname</th>
                             <th>Username</th>
                             <th>Email</th>
-                            <th>Action</th>
                           </tr>
                         </thead>
                         <tbody>
+                          @foreach ($user as $user)
                           <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>
-                              <button class="btn btn-lg btn-danger pull-left"><i class="glyphicon glyphicon-ok-sign"></i>Block</button></label>
-                              <button class="btn btn-lg btn-success pull-right"><i class="glyphicon glyphicon-ok-sign"></i>Unblock</button></label>
-                            </td>
+                            <td>{{$user->firstname}}</td>
+                            <td>{{$user->lastname}}</td>
+                            <td>{{$user->username}}</td>
+                            <td>{{$user->email}}</td>
                           </tr>
+                          @endforeach
                           
                           
                         </tbody>
