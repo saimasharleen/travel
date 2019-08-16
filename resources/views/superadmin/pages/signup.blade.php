@@ -3,6 +3,7 @@
         <!-- partial -->
         <div class="main-panel">
           <div class="content-wrapper">
+                  <h3 style="color:Tomato;"> {{ Session::get('message')}} </h3> 
                     <div class="col-12">
                     <div class="card">
                       <div class="card-body">
