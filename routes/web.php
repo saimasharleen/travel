@@ -40,5 +40,7 @@ Route::get('/superadmin/pages/profile', 'superadminController@profile');
 Route::post('/superadmin/pages/profile', 'superadminController@updateProfile');
 
 Route::get('/superadmin/pages/b2bagentlist', 'superadminController@b2bagentlist')->name('b2bagentlist');
+Route::get('/superadmin/pages/hotelagentlist', 'superadminController@hotelagentlist')->name('hotelagentlist');
+Route::get('/superadmin/pages/flightagentlist', 'superadminController@flightagentlist')->name('flightagentlist');
 
 Route::get('/logout', 'logoutController@index')->name('logout');
