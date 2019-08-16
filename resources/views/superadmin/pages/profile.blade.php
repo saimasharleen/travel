@@ -11,14 +11,14 @@
 <div class="container bootstrap snippet">
     <div class="row">
         <div class="col-sm-10"><h1>User name</h1></div>
-        <div class="col-sm-2"><a href="/users" class="pull-right"><img title="profile image" class="img-circle img-responsive" src="http://www.gravatar.com/avatar/28fd20ccec6865e2d5f0e1f4446eb7bf?s=100"></a></div>
+        <div class="col-sm-2"><a href="" class="pull-right"><img title="profile image" class="img-circle img-responsive" src="{{asset('images')}}/{{$user->img}}" alt="{{$user->img}}"></a></div>
     </div>
     <div class="row">
         <div class="col-sm-3"><!--left col-->
             <form method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="text-center">
-                    <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
+                    <img src="{{asset('images')}}/{{$user->img}}" class="avatar img-circle img-thumbnail" alt="avatar">
                     <h6>Upload a different photo...</h6>
                     <input type="file" class="text-center center-block file-upload" name="image">
                 </div>
@@ -128,7 +128,7 @@
 
                             <div class="col-xs-6">
                                 <label for="first_name"><h4>First name</h4></label>
-                                <input type="text" class="form-control" name="first_name" id="first_name" placeholder="first name" value="{{$user->firstname}}" >
+                                <input type="text" class="form-control" name="firstname" id="first_name" placeholder="first name" value="{{$user->firstname}}" >
                             </div>
                         </div>
                         
@@ -136,7 +136,7 @@
 
                             <div class="col-xs-6">
                                 <label for="last_name"><h4>Last name</h4></label>
-                                <input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" value="{{$user->lastname}}" >
+                                <input type="text" class="form-control" name="lastname" id="last_name" placeholder="last name" value="{{$user->lastname}}" >
                             </div>
                         </div>
                         
