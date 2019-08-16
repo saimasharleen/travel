@@ -47,13 +47,9 @@ class superadminController extends Controller
     }
     
     public function b2bagentlist()
-    {   if(session('email') == null){
-           return redirect()->route('login');
-        }
-    else{
-
-         return view('superadmin.pages.b2bagentlist');
-        }
+    {   $user = Userinfo::where('usertype', 'b2bagent')->get();
+        //dd($user);
+       return view('superadmin.pages.b2bagentlist',compact('user'));
          
     }
     /**
@@ -171,11 +167,7 @@ class superadminController extends Controller
         
     }
 }
-   public function b2bagentlist(){
-    $user = Userinfo::all();
-        //dd($user);
-       return view('superadmin.pages.b2bagentlist',compact('user'));
-   }
+
     public function profile()
     {   
         //dd(session('email')); 
