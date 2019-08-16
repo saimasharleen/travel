@@ -26,10 +26,17 @@ class loginController extends Controller
                 $request->session()->put('email', $email);
     			return redirect()->route('superadmin.index');
             }
-		}elseif($user != null){
+		}
+        else if($user != null){
             if($user->usertype == "hotelagent"){
                 $request->session()->put('email', $email);
                 return redirect()->route('hotelagent.index');
+            }
+        }
+        else if($user != null){
+            if($user->usertype == "b2bagent"){
+                $request->session()->put('email', $email);
+                return redirect()->route('b2b.index');
             }
         }
         else{
