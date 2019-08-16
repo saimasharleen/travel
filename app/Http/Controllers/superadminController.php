@@ -16,12 +16,23 @@ class superadminController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    
+   /* if(session('email') == null){
+           return redirect()->route('login.index');
+        }
+    else{
 
-         
-    public function index()
-    {
          return view('superadmin.index');
+        }
+*/
+         
+    public function index(){
+    if(session('email') == null){
+           return redirect()->route('login');
+        }
+    else{
+
+         return view('superadmin.index');
+        }
     }
     public function signup()
     {
