@@ -9,10 +9,7 @@
 @section('content')
 <hr>
 <div class="container bootstrap snippet">
-    <div class="row">
-        <div class="col-sm-10"><h1>User name</h1></div>
-        <div class="col-sm-2"><a href="" class="pull-right"><img title="profile image" class="img-circle img-responsive" src="{{asset('images')}}/{{$user->img}}" alt="{{$user->img}}"></a></div>
-    </div>
+    
     <div class="row">
         <div class="col-sm-3"><!--left col-->
             <form method="post" enctype="multipart/form-data">
