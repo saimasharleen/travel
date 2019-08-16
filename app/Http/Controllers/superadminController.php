@@ -171,7 +171,11 @@ class superadminController extends Controller
         
     }
 }
-
+   public function b2bagentlist(){
+    $user = Userinfo::all();
+        //dd($user);
+       return view('superadmin.pages.b2bagentlist',compact('user'));
+   }
     public function profile()
     {   
         //dd(session('email')); 
@@ -182,47 +186,24 @@ class superadminController extends Controller
     }
     public function updateProfile(Request $request)
     {
-        $this->validate($request, [
+        /*$this->validate($request, [
         'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]);
+        ]);*/
 
     if ($request->hasFile('image')) {
         $image = $request->file('image');
         $name = time().'.'.$image->getClientOriginalExtension();
         $destinationPath = public_path('/images');
         $image->move($destinationPath, $name);
-        //$this->save();
-
-/*        $adv  = new Userinfo([
-            'img' => $name
-        ]);*/
-/*        $adv::where('email',session('email'))->update();
-*/    
 
         DB::table('user')
             ->where('email', session('email'))
             ->update(['img' => $name]);
 
-         return back();
         
 
     }
-    
-    }
-
-     public function editprofilestore(Request $request)
-    {
-         $this->validate($request, [
-            'firstname'=>'Required',
-            'lastname'=>'Required',
-            'username'=>'Required',
-            'contactno'=>'Required',
-            'cname'=>'Required',
-            'city'=>'Required',
-            'address'=>'Required',
-            'postalcode'=>'Required',
-        ]);
-
+                //dd($request);
         $user = Userinfo::where('email',session('email'))->first();
         $user->firstname = $request->get('firstname');
         $user->lastname = $request->get('lastname');
@@ -233,8 +214,11 @@ class superadminController extends Controller
         $user->address = $request->get('address');
         $user->postalcode = $request->get('postalcode');
         $user->update();
-
+        return back();
+    
     }
+
+
      public function forgetpassword()
     {
         
