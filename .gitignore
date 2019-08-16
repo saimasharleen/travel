@@ -17,3 +17,5 @@ public/js/forms.js
 public/js/jquery-migrate-1.1.1.js
 public/js/jquery.ui.totop.js
 public/js/sForm.js
+public/superadmin/vendors/lightgallery/css/lightgallery.css
+public/superadmin/vendors/lightgallery/css/lg-transitions.css
