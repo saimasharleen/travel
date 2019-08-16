@@ -1,9 +1,19 @@
 @extends('layouts.superadmin')
 @section('content')
+
 <div class="main-panel">
-                  
+  <br>
+              <div class="col-sm-2">
+                    <form class="ml-auto search-form d-none d-md-block" action="#">
+                     <div class="form-group">
+                     <input type="search" class="form-control" placeholder="Search Here">
+                     </div>
+                    </form>
+              </div>
                     <div class="table-responsive">
-                      <table class="table">
+                      <table class="table info-table">
+                        <center><h3>B2B Agent List</h3></center>
+                        <br>
                         <thead>
                           <tr>
                             <th>Firstname</th>
@@ -31,5 +41,5 @@
 
           @endsection
 @section('title')
-    B2Buserlist 
+    B2Bagentlist 
   @endsection
