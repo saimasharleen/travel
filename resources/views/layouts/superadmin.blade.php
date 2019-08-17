@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="{{asset('superadmin')}}/css/demo_1/style.css">
     <!-- End Layout styles -->
     <link rel="shortcut icon" href="{{asset('superadmin')}}/images/favicon.png" />
+    @yield('style')
   </head>
   <body>
     <div class="container-scroller">
@@ -87,7 +88,7 @@
                 <img class="img-xs rounded-circle" src="{{asset('superadmin')}}/images/faces/face8.jpg" alt="Profile image"> </a>
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
                 <div class="dropdown-header text-center">
-                  <img class="img-md rounded-circle" src="{{asset('superadmin')}}//images/faces/face8.jpg" alt="Profile image">
+                  <img class="img-md rounded-circle" src="{{asset('images')}}/{{$user->img}}" alt="Profile image">
                   <p class="mb-1 mt-3 font-weight-semibold">Allen Moreno</p>
                   <p class="font-weight-light text-muted mb-0">allenmoreno@gmail.com</p>
                 </div>
@@ -210,5 +211,6 @@
     <!-- Custom js for this page-->
     <script src="{{asset('superadmin')}}/js/demo_1/dashboard.js"></script>
     <!-- End custom js for this page-->
+    @yield('script')
   </body>
 </html>
