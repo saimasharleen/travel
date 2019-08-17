@@ -30,8 +30,9 @@ class superadminController extends Controller
            return redirect()->route('login');
         }
     else{
+        $user = Userinfo::where('email',session('email'))->first();
 
-         return view('superadmin.index');
+         return view('superadmin.index',compact('user'));
         }
     }
     public function signup()
@@ -40,16 +41,54 @@ class superadminController extends Controller
            return redirect()->route('login');
         }
     else{
-
-         return view('superadmin.pages.signup');
+        $user = Userinfo::where('email',session('email'))->first();
+         return view('superadmin.pages.signup',compact('user'));
         }
          
     }
      public function userlist()
     {  
         $userlogin = login::all();
+        $user = Userinfo::where('email',session('email'))->first();
         //dd($user);
-       return view('superadmin.pages.userlist',compact('userlogin'));
+       return view('superadmin.pages.userlist',compact(['userlogin','user']));
+    }
+    public function block($id){
+        $userlogin = login::find($id);
+        $userlogin->status = 1;
+        $userlogin->save();
+        return redirect()->route('userlist');
+    }
+    public function unblock($id){
+        $userlogin = login::find($id);
+        $userlogin->status = 0;
+        $userlogin->save();
+        return redirect()->route('userlist');
+    }
+
+    public function search(Request $request)
+    {
+        if($request->ajax())
+        {
+            $output="abcd";
+            $users=DB::table('user')->where('username','like','%'. $request->search.'%')
+                    ->where('usertype', 'b2bagent')
+                    ->get();
+            if($users)
+            {
+                foreach ($users as $key => $user) {
+                $output.='<tr>'.
+            
+                '<td>'.$user->firstname.'</td>'.
+                '<td>'.$user->lastname.'</td>'.
+                '<td>'.$user->username.'</td>'.
+                '<td>'.$user->email.'</td>'.
+                
+                '</tr>';
+                }
+            return Response($output);
+            }
+        }
     }
     public function b2bagentlist()
     {  
@@ -57,10 +96,10 @@ class superadminController extends Controller
            return redirect()->route('login');
         }
     else{
-
-        $user = Userinfo::where('usertype', 'b2bagent')->get();
+        $user = Userinfo::where('email',session('email'))->first();
+        $userdata = Userinfo::where('usertype', 'b2bagent')->get();
         //dd($user);
-       return view('superadmin.pages.b2bagentlist',compact('userlogin'));
+       return view('superadmin.pages.b2bagentlist',compact(['user','userdata']));
         }
     }
     public function hotelagentlist()
@@ -69,10 +108,10 @@ class superadminController extends Controller
            return redirect()->route('login');
         }
     else{
-
-        $user = Userinfo::where('usertype', 'hotelagent')->get();
+        $user = Userinfo::where('email',session('email'))->first();
+        $userdata = Userinfo::where('usertype', 'hotelagent')->get();
         //dd($user);
-       return view('superadmin.pages.hotelagentlist',compact('user'));
+       return view('superadmin.pages.hotelagentlist',compact(['user','userdata']));
         }
     }
 
@@ -82,10 +121,10 @@ class superadminController extends Controller
            return redirect()->route('login');
         }
     else{
-
-        $user = Userinfo::where('usertype', 'flightagent')->get();
+        $user = Userinfo::where('email',session('email'))->first();
+        $userdata = Userinfo::where('usertype', 'flightagent')->get();
         //dd($user);
-       return view('superadmin.pages.flightagentlist',compact('user'));
+       return view('superadmin.pages.flightagentlist',compact(['user','userdata']));
         }
     }
     /**
@@ -152,8 +191,9 @@ class superadminController extends Controller
            return redirect()->route('login');
         }
     else{
-
-        return view('superadmin.pages.notice');
+        $user = Userinfo::where('email',session('email'))->first();
+        $userdata = Userinfo::where('usertype', 'flightagent')->get();
+        return view('superadmin.pages.notice',compact(['user','userdata']));
         }
         
     }
@@ -250,7 +290,23 @@ class superadminController extends Controller
         return back();
     
     }
+    
+    /*public function banuser(Request $request){
+     $status = $request->status();
+     $userid = $request->id;
 
+     $update_status = DB::table('userlogin')
+     ->where('id',$userid)
+     ->update([
+        'status' => $status
+
+     ])
+
+    if($update_status){
+        echo "status updated successfully";
+     }
+    }*/
+    
 
      public function forgetpassword()
     {
