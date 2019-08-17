@@ -123,7 +123,7 @@
             </li>
             <li class="nav-item nav-category">Main Menu</li>
             <li class="nav-item">
-              <a class="nav-link" href="/superadmin/pages/">
+              <a class="nav-link" href="/superadmin/pages/userlist">
                 <i class="menu-icon typcn typcn-shopping-bag"></i>
                 <span class="menu-title">Dashboard</span>
               </a>
