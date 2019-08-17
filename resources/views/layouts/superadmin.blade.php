@@ -85,12 +85,12 @@
             </li>
             <li class="nav-item dropdown d-none d-xl-inline-block user-dropdown">
               <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-                <img class="img-xs rounded-circle" src="{{asset('superadmin')}}/images/faces/face8.jpg" alt="Profile image"> </a>
+                <img class="img-xs rounded-circle" src="{{asset('images')}}/{{$user->img}}" alt="Profile image"> </a>
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
                 <div class="dropdown-header text-center">
                   <img class="img-md rounded-circle" src="{{asset('images')}}/{{$user->img}}" alt="Profile image">
-                  <p class="mb-1 mt-3 font-weight-semibold">Allen Moreno</p>
-                  <p class="font-weight-light text-muted mb-0">allenmoreno@gmail.com</p>
+                  <p class="mb-1 mt-3 font-weight-semibold">{{$user->username}}</p>
+                  <p class="font-weight-light text-muted mb-0">{{$user->email}}</p>
                 </div>
                 <a class="dropdown-item" href="/superadmin/pages/profile">My Profile <span class="badge badge-pill badge-danger"></span><i class="dropdown-item-icon ti-dashboard"></i></a>
                 <a class="dropdown-item" href="{{route('logout')}}">Sign Out<i class="dropdown-item-icon ti-power-off"></i></a>
@@ -113,11 +113,11 @@
             <li class="nav-item nav-profile">
               <a href="#" class="nav-link">
                 <div class="profile-image">
-                  <img class="img-xs rounded-circle"  alt="profile image">
+                  <img class="img-xs rounded-circle" src="{{asset('images')}}/{{$user->img}}"  alt="profile image">
                   <div class="dot-indicator bg-success"></div>
                 </div>
                 <div class="text-wrapper">
-                  <p class="profile-name"></p>
+                  <p class="profile-name">{{$user->username}}</p>
                   <p class="designation">Superadmin</p>
                 </div>
               </a>
