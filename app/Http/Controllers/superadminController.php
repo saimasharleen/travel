@@ -90,6 +90,8 @@ class superadminController extends Controller
             }
         }
     }
+
+
     public function b2bagentlist()
     {  
          if(session('email') == null){
