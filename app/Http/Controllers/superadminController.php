@@ -45,7 +45,12 @@ class superadminController extends Controller
         }
          
     }
-    
+     public function userlist()
+    {  
+        $userlogin = login::all();
+        //dd($user);
+       return view('superadmin.pages.userlist',compact('userlogin'));
+    }
     public function b2bagentlist()
     {  
          if(session('email') == null){
@@ -55,7 +60,7 @@ class superadminController extends Controller
 
         $user = Userinfo::where('usertype', 'b2bagent')->get();
         //dd($user);
-       return view('superadmin.pages.b2bagentlist',compact('user'));
+       return view('superadmin.pages.b2bagentlist',compact('userlogin'));
         }
     }
     public function hotelagentlist()
