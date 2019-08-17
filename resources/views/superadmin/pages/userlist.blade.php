@@ -46,7 +46,7 @@
                             <th>Email</th>
                             <th>Usertype</th>
                             <th>status</th>
-                            <th>Action</th>
+                            {{-- <th>Action</th> --}}
                           </tr>
                         </thead>
                         <tbody>
