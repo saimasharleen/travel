@@ -22,12 +22,12 @@
                           </tr>
                         </thead>
                         <tbody>
-                          @foreach ($user as $user)
+                          @foreach ($userdata as $userdata)
                           <tr>
-                            <td>{{$user->firstname}}</td>
-                            <td>{{$user->lastname}}</td>
-                            <td>{{$user->username}}</td>
-                            <td>{{$user->email}}</td>
+                            <td>{{$userdata->firstname}}</td>
+                            <td>{{$userdata->lastname}}</td>
+                            <td>{{$userdata->username}}</td>
+                            <td>{{$userdata->email}}</td>
                           </tr>
                           @endforeach
                           
