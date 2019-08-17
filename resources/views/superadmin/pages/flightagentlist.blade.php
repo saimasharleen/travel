@@ -1,10 +1,13 @@
 @extends('layouts.superadmin')
+@section('style')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+@endsection
 @section('content')
 <div class="main-panel">
                   <div class="col-sm-2">
                     <form class="ml-auto search-form d-none d-md-block" action="#">
                      <div class="form-group">
-                     <input type="search" class="form-control" placeholder="Search Here">
+                     <input type="search" id="searchf" class="form-control" placeholder="Search Here">
                      </div>
                     </form>
               </div>
@@ -37,7 +40,24 @@
                     </div>
                   </div>
                 </div>
-
+<script type="text/javascript">
+$('#searchf').on('keyup',function(){
+$value=$(this).val();
+console.log($value);
+$.ajax({
+type : 'get',
+url : '{{URL::to('searchf')}}',
+data:{'search':$value},
+success:function(data){
+  console.log(data);
+$('tbody').html(data);
+}
+});
+})
+</script>
+<script type="text/javascript">
+$.ajaxSetup({ headers: { 'csrftoken' : '{{ csrf_token() }}' } });
+</script>
           @endsection
 @section('title')
     Flightagentlist 
