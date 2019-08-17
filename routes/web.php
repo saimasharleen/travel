@@ -43,6 +43,12 @@ Route::get('/superadmin/pages/b2bagentlist', 'superadminController@b2bagentlist'
 Route::get('/superadmin/pages/hotelagentlist', 'superadminController@hotelagentlist')->name('hotelagentlist');
 Route::get('/superadmin/pages/flightagentlist', 'superadminController@flightagentlist')->name('flightagentlist');
 Route::get('/superadmin/pages/userlist', 'superadminController@userlist')->name('userlist');
+Route::get('/superadmin/pages/userlist/block/{id}', 'superadminController@block')->name('userlist.block');
+Route::get('/superadmin/pages/userlist/unblock/{id}', 'superadminController@unblock')->name('userlist.unblock');
+Route::get('/search', 'superadminController@search');
+
+Route::get('/superadmin/pages/banuser', 'superadminController@banuser')->name('banuser');
+
 
 Route::get('/hotelagent/index', 'hotelagentController@index')->name('hotelagent.index');
 
