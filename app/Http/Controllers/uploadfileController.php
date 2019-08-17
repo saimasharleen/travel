@@ -1,15 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Userinfo;
 use Illuminate\Http\Request;
 use App\advertise;
 
 class uploadfileController extends Controller
 {
 	public function advertisement()
-    {
-        return view('superadmin.pages.advertisement');
+    {   $user = Userinfo::where('email',session('email'))->first();
+        return view('superadmin.pages.advertisement',compact('user'));
     }
     public function store(Request $request)
     {
