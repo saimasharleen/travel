@@ -1,12 +1,39 @@
 @extends('layouts.superadmin')
+@section('style')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+@endsection
 @section('content')
-<script>
+
+
+{{-- <script>
   $(document).ready(function(){
-    $("#loginstatus").change(function(){
-    alert('hi');
+
+    @foreach($userlogin as $user)
+         $("#selectDiv{{$user->id}}").hide();
+     $("#showSelectDiv{{$user->id}}").click(function(){
+      $("#selectDiv{{$user->id}}").show();
     });
+    $("#loginstatus{{$user->id}}").change(function(){
+      var status = $("#loginstatus{{$user->id}}").val();
+      var id = $("#userid").val()
+      if(status==""){
+        alert("Please select an option");
+      }else{
+        $.ajax({
+          url: '{{url("/superadmin/pages/banuser")}}',
+          data: 'status=' + status + '&userid=' + id,
+          type: 'get',
+          success:function(response){
+            console.log(response);
+          }
+        });
+      }
+    
+    });
+    @endforeach
   });
-</script>
+  
+</script> --}}
 <div class="main-panel">
   <br>
                     <div class="table-responsive">
@@ -23,24 +50,20 @@
                           </tr>
                         </thead>
                         <tbody>
-                          @foreach ($userlogin as $userlogin)
+                          @foreach ($userlogin as $user)
                           <tr>
                     
-                            <td>{{$userlogin->email}}</td>
-                            <td>{{$userlogin->usertype}}</td>
+                            <td>{{$user->email}}</td>
+                            <td>{{$user->usertype}}</td>
                             <td>
-                              @if($userlogin->status==0)
-                                <b style="color:green">enable</b>
-                              @else
-                                 <b style="color:red">disabled</b>
+                              @if ($user->status == 0)
+                                {{-- expr --}}
+                                <a href="{{route('userlist.block', [$user->id])}}"><button>Block</button></a>
+                              
+                              @elseif($user->status == 1)
+                              <a href="{{route('userlist.unblock', [$user->id])}}"><button>UnBlock</button></a>
                               @endif
-                              <br>
-                              <select id="loginstatus">
-                                <option value="0">enable</option>
-                                <option value="1">disabled</option>
-                              </select>
                             </td>
-                            <td><a href="" class="btn btn-fill btn-success">Actions</a></td>
                           </tr>
                           @endforeach
                         </tbody>
