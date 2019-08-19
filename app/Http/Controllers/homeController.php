@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\advertise;
 use App\notice;
+use App\gallery;
 
 class homeController extends Controller
 {
@@ -32,7 +33,7 @@ class homeController extends Controller
         return view('tours');
     }
     public function gallery()
-    {  
-        return view('gallery');
+    {   $gals = gallery::all();
+        return view('gallery',compact('gals'));
     }
 }
