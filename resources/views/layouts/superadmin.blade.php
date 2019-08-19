@@ -136,12 +136,6 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/superadmin/pages/">
-                <i class="menu-icon typcn typcn-th-large-outline"></i>
-                <span class="menu-title">Deposit Amount</span>
-              </a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="/superadmin/pages/b2bagentlist">
                 <i class="menu-icon typcn typcn-th-large-outline"></i>
                 <span class="menu-title">B2B Agent List</span>
