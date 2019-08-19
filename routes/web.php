@@ -51,5 +51,8 @@ Route::get('/superadmin/pages/banuser', 'superadminController@banuser')->name('b
 
 
 Route::get('/hotelagent/index', 'hotelagentController@index')->name('hotelagent.index');
+Route::get('/hotelagent/room', 'hotelagentController@room')->name('room');
+Route::get('/hotelagent/gallery', 'galleryController@gallery');
+Route::post('/hotelagent/gallery', 'galleryController@store');
 
 Route::get('/logout', 'logoutController@index')->name('logout');
