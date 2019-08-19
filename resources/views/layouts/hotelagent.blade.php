@@ -1,162 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
+    <title>@yield('title')</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>@yield('title')</title>
-    <!-- plugins:css -->
-    <link rel="stylesheet" href="{{asset('hotelagent')}}/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="{{asset('hotelagent')}}/vendors/iconfonts/ionicons/css/ionicons.css">
-    <link rel="stylesheet" href="{{asset('hotelagent')}}/vendors/iconfonts/typicons/src/font/typicons.css">
-    <link rel="stylesheet" href="{{asset('hotelagent')}}/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css">
-    <link rel="stylesheet" href="{{asset('hotelagent')}}/vendors/css/vendor.bundle.base.css">
-    <link rel="stylesheet" href="{{asset('hotelagent')}}/vendors/css/vendor.bundle.addons.css">
-  
-    <link rel="stylesheet" href="{{asset('hotelagent')}}/css/shared/style.css">
-    <!-- endinject -->
-    <!-- Layout styles -->
-    <link rel="stylesheet" href="{{asset('hotelagent')}}/css/demo_1/style.css">
-    <!-- End Layout styles -->
-    <link rel="shortcut icon" href="{{asset('hotelagent')}}/images/favicon.png" />
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{asset('hotelagent')}}/css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="{{asset('hotelagent')}}/css/animate.css">
+    
+    <link rel="stylesheet" href="{{asset('hotelagent')}}/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="{{asset('hotelagent')}}/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="{{asset('hotelagent')}}/css/magnific-popup.css">
+
+    <link rel="stylesheet" href="{{asset('hotelagent')}}/css/aos.css">
+
+    <link rel="stylesheet" href="{{asset('hotelagent')}}/css/ionicons.min.css">
+
+    <link rel="stylesheet" href="{{asset('hotelagent')}}/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="{{asset('hotelagent')}}/css/jquery.timepicker.css">
+
+    
+    <link rel="stylesheet" href="{{asset('hotelagent')}}/css/flaticon.css">
+    <link rel="stylesheet" href="{{asset('hotelagent')}}/css/icomoon.css">
+    <link rel="stylesheet" href="{{asset('hotelagent')}}/css/style.css">
+    @yield('style')
   </head>
   <body>
-    <div class="container-scroller">
-      <!-- partial:partials/_navbar.html -->
-      <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-        <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
-          <a class="navbar-brand brand-logo" href="/hotelagent/index">
-            <img src="{{asset('hotelagent')}}/images/logo.svg" alt="/hotelagent/logo" /> </a>
-          <a class="navbar-brand brand-logo-mini" href="/hotelagent/index">
-            <img src="{{asset('hotelagent')}}/images/logo-mini.svg" alt="logo" /> </a>
-        </div>
-        <div class="navbar-menu-wrapper d-flex align-items-center">
-          <ul class="navbar-nav">
-            <li class="nav-item dropdown language-dropdown">
-              <a class="nav-link dropdown-toggle px-2 d-flex align-items-center" id="LanguageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-                <div class="d-inline-flex mr-0 mr-md-3">
-                  <div class="flag-icon-holder">
-                    <i class="flag-icon flag-icon-us"></i>
-                  </div>
-                </div>
-                <span class="profile-text font-weight-medium d-none d-md-block">English</span>
-              </a>
-              <div class="dropdown-menu dropdown-menu-left navbar-dropdown py-2" aria-labelledby="LanguageDropdown">
-                <a class="dropdown-item">
-                  <div class="flag-icon-holder">
-                    <i class="flag-icon flag-icon-us"></i>
-                  </div>English
-                </a>
-              </div>
-            </li>
-          </ul>
+
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Deluxe</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="oi oi-menu"></span> Menu
+        </button>
+
+        <div class="collapse navbar-collapse" id="ftco-nav">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item dropdown">
-              <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="notificationDropdown">
-                <a class="dropdown-item py-3 border-bottom">
-                  <p class="mb-0 font-weight-medium float-left">You have 4 new notifications </p>
-                  <span class="badge badge-pill badge-primary float-right">View all</span>
-                </a>
-                <a class="dropdown-item preview-item py-3">
-                  <div class="preview-thumbnail">
-                    <i class="mdi mdi-alert m-auto text-primary"></i>
-                  </div>
-                  <div class="preview-item-content">
-                    <h6 class="preview-subject font-weight-normal text-dark mb-1">Application Error</h6>
-                    <p class="font-weight-light small-text mb-0"> Just now </p>
-                  </div>
-                </a>
-                <a class="dropdown-item preview-item py-3">
-                  <div class="preview-thumbnail">
-                    <i class="mdi mdi-settings m-auto text-primary"></i>
-                  </div>
-                  <div class="preview-item-content">
-                    <h6 class="preview-subject font-weight-normal text-dark mb-1">Settings</h6>
-                    <p class="font-weight-light small-text mb-0"> Private message </p>
-                  </div>
-                </a>
-                <a class="dropdown-item preview-item py-3">
-                  <div class="preview-thumbnail">
-                    <i class="mdi mdi-airballoon m-auto text-primary"></i>
-                  </div>
-                </a>
-              </div>
-            </li>
+            <li class="nav-item active"><a href="/hotelagent/index" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="/hotelagent/room" class="nav-link">Rooms</a></li>
+            <li class="nav-item"><a href="/hotelagent/gallery" class="nav-link">Gallery</a></li>
             <li class="nav-item dropdown d-none d-xl-inline-block user-dropdown">
               <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-                <img class="img-xs rounded-circle" src="{{asset('hotelagent')}}/images/faces/face8.jpg" alt="Profile image"> </a>
+                <img class="img-xs rounded-circle" src="" alt="Profile image"> </a>
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
                 <div class="dropdown-header text-center">
-                  <img class="img-md rounded-circle" src="{{asset('hotelagent')}}//images/faces/face8.jpg" alt="Profile image">
-                  <p class="mb-1 mt-3 font-weight-semibold">Allen Moreno</p>
-                  <p class="font-weight-light text-muted mb-0">allenmoreno@gmail.com</p>
+                  <img class="img-md rounded-circle" src="" alt="Profile image">
+                  <p class="mb-1 mt-3 font-weight-semibold">name</p>
+                  <p class="font-weight-light text-muted mb-0">email</p>
                 </div>
-                <a class="dropdown-item" href="/hotelagent/pages/profile">My Profile <span class="badge badge-pill badge-danger"></span><i class="dropdown-item-icon ti-dashboard"></i></a>
+                <a class="dropdown-item" href="">My Profile <span class="badge badge-pill badge-danger"></span><i class="dropdown-item-icon ti-dashboard"></i></a>
                 <a class="dropdown-item" href="{{route('logout')}}">Sign Out<i class="dropdown-item-icon ti-power-off"></i></a>
                 {{-- <form id="logout-form" method="POST" action="{{ route('logout') }}" style="display: none">
                   @csrf
                 </form> --}}
               </div>
-            </li>
+            </li>          
           </ul>
-          <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
-            <span class="mdi mdi-menu"></span>
-          </button>
         </div>
-      </nav>
-      <!-- partial -->
-      <div class="container-fluid page-body-wrapper">
-        <!-- partial:partials/_sidebar.html -->
-        <nav class="sidebar sidebar-offcanvas" id="sidebar">
-          <ul class="nav">
-            <li class="nav-item nav-profile">
-              <a href="#" class="nav-link">
-                <div class="profile-image">
-                  <img class="img-xs rounded-circle"  alt="profile image">
-                  <div class="dot-indicator bg-success"></div>
-                </div>
-                <div class="text-wrapper">
-                  <p class="profile-name"></p>
-                  <p class="designation">Hotelagent</p>
-                </div>
-              </a>
-            </li>
-            <li class="nav-item nav-category">Main Menu</li>
-            <li class="nav-item">
-              <a class="nav-link" href="/superadmin/pages/">
-                <i class="menu-icon typcn typcn-shopping-bag"></i>
-                <span class="menu-title">Dashboard</span>
-              </a>
-            </li>
-            
-                </ul>
-              </div>
-            </li>
-          </ul>
-        </nav>
-        <!-- partial -->
-        @yield('content')
-          <!-- partial:partials/_footer.html -->
-      @yield('footer')
       </div>
-        <!-- main-panel ends -->
-      </div>
-      <!-- page-body-wrapper ends -->
-    </div>
-    <!-- container-scroller -->
-    <!-- container-scroller -->
-    <!-- plugins:js -->
-    <script src="{{asset('hotelagent')}}/vendors/js/vendor.bundle.base.js"></script>
-    <script src="{{asset('hotelagent')}}/vendors/js/vendor.bundle.addons.js"></script>
-    <!-- endinject -->
-    <!-- Plugin js for this page-->
-    <!-- End plugin js for this page-->
-    <!-- inject:js -->
-    <script src="{{asset('hotelagent')}}/js/shared/off-canvas.js"></script>
-    <script src="{{asset('hotelagent')}}/js/shared/misc.js"></script>
-    <!-- endinject -->
-    <!-- Custom js for this page-->
-    <script src="{{asset('hotelagent')}}/js/demo_1/dashboard.js"></script>
-    <!-- End custom js for this page-->
+    </nav>
+    <!-- END nav -->
+
+    @yield('content')
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  <script src="{{asset('hotelagent')}}/js/jquery.min.js"></script>
+  <script src="{{asset('hotelagent')}}/js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="{{asset('hotelagent')}}/js/popper.min.js"></script>
+  <script src="{{asset('hotelagent')}}/js/bootstrap.min.js"></script>
+  <script src="{{asset('hotelagent')}}/js/jquery.easing.1.3.js"></script>
+  <script src="{{asset('hotelagent')}}/js/jquery.waypoints.min.js"></script>
+  <script src="{{asset('hotelagent')}}/js/jquery.stellar.min.js"></script>
+  <script src="{{asset('hotelagent')}}/js/owl.carousel.min.js"></script>
+  <script src="{{asset('hotelagent')}}/js/jquery.magnific-popup.min.js"></script>
+  <script src="{{asset('hotelagent')}}/js/aos.js"></script>
+  <script src="{{asset('hotelagent')}}/js/jquery.animateNumber.min.js"></script>
+  <script src="{{asset('hotelagent')}}/js/bootstrap-datepicker.js"></script>
+  <script src="{{asset('hotelagent')}}/js/jquery.timepicker.min.js"></script>
+  <script src="{{asset('hotelagent')}}/js/scrollax.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="{{asset('hotelagent')}}/js/google-map.js"></script>
+  <script src="{{asset('hotelagent')}}/js/main.js"></script>
+    
   </body>
 </html>
